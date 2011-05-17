@@ -1,13 +1,23 @@
 package com.niccholaspage.ShowIt;
 
+import org.bukkit.Material;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.block.Block;
 import org.bukkit.event.Event;
+import org.bukkit.event.player.PlayerListener;
+import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ShowIt extends JavaPlugin {
-	//Links the BasicPlayerListener
-	private final ShowItPlayerListener playerListener = new ShowItPlayerListener();
+	private final PlayerListener playerListener = new PlayerListener(){
+		 public void onPlayerPickupItem(PlayerPickupItemEvent event){
+			 Block block = event.getItem().getLocation().getBlock();
+			 if (block.getType() == Material.GLASS){
+				 event.setCancelled(true);
+			 }
+		 }
+	};
     @Override
 	public void onDisable() {
 		//Print "Basic Disabled" on the log.
