@@ -20,7 +20,6 @@ public class ShowIt extends JavaPlugin {
 	};
     @Override
 	public void onDisable() {
-		//Print "Basic Disabled" on the log.
 		System.out.println("ShowIt Disabled");
 	}
     @Override
