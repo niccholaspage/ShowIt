@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ShowIt extends JavaPlugin {
 	//Links the BasicPlayerListener
-	private final ShowItPlayerListener playerListener = new ShowItPlayerListener(this);
+	private final ShowItPlayerListener playerListener = new ShowItPlayerListener();
     @Override
 	public void onDisable() {
 		//Print "Basic Disabled" on the log.
