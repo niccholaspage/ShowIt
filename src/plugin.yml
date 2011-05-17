@@ -1,0 +1,5 @@
+name: ShowIt
+
+main: com.niccholaspage.ShowIt.ShowIt
+
+version: 0.1
